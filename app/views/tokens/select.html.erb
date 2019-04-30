@@ -1,0 +1,5 @@
+<%= bootstrap_form_for :selection do |f| %>
+  <%= f.collection_select(:activity, Subject.select(:activity).distinct, :activity, :activity, :label => 'Activity',
+                          :prompt => 'Select activity') %>
+  <%= f.submit "Enter", :class => "btn btn-success" %>
+<% end %>

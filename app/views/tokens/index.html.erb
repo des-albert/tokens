@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="table-responsive col-md-6">
+    <h4>Incoming Tokens</h4>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>State</th>
+        <th>Creator</th>
+        <th>Subject</th>
+        <th>Date</th>
+        <th colspan="4"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @tokens.each do |token| %>
+        <% if token.recipient.id == session[:user_id] %>
+          <tr>
+            <td ><%= token.state.name %></td>
+            <td ><%= token.creator %></td>
+            <td><%= token.package.subject %></td>
+            <td><%= token.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime('%v') %></td>
+            <td><%= link_to 'Edit', edit_token_path(token)  %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-responsive col-md-6">
+    <h4>Outgoing Tokens</h4>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>State</th>
+        <th>Recipient</th>
+        <th>Subject</th>
+        <th>Date</th>
+        <th colspan="4"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @tokens.each do |token| %>
+        <% if token.creator == session[:user] %>
+          <tr>
+            <td><%= token.state.name %></td>
+            <td><%= token.recipient.name %></td>
+            <td><%= token.package.subject %></td>
+            <td><%= token.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime('%v') %></td>
+            <td><%= link_to 'Edit', edit_token_path(token) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>

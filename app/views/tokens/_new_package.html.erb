@@ -1,0 +1,8 @@
+<div class='nested-fields'>
+  <%= f.collection_select(:subject, Subject.where('activity = ?', @activity), :name, :name, :label => 'Subject :',
+                          :prompt => 'Select subject') %>
+  <%= f.text_area :request, :as => :text,
+                  :input_html => {:class => "auto grow", :rows => 5, :cols => 80}%>
+  <%= f.text_area :response, :required => false,
+              :as => :text, :input_html => {:class => "auto grow", :rows => 5, :cols => 80} %>
+</div>

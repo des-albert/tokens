@@ -1,0 +1,10 @@
+<%= bootstrap_form_for @token do |f| %>
+  <%= f.fields_for :package do |package| %>
+    <%= render 'new_package', :f => package %>
+  <% end %>
+  <%= f.collection_select(:recipient_id, Recipient.order('name ASC').all, :id, :name, :label => 'Recipient :',
+                                     :prompt => 'Select name') %>
+  <%= f.submit "Send",  :class => "btn btn-success" %>
+  <%= f.submit "Draft", :class => "btn btn-warning" %>
+  <%= f.submit "Exit", :class => "btn btn-info" %>
+<% end %>

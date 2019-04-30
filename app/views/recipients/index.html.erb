@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="table-responsive col-md-6">
+    <p id="notice"><%= notice %></p>
+    <%= link_to "New Recipient", new_recipient_path, :class => "btn btn-success" %>
+    <h4>Recipients</h4>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>email</th>
+        <th>Date</th>
+        <th colspan="2"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @recipients.each do |recipient| %>
+          <tr>
+            <td ><%= recipient.name %></td>
+            <td ><%= recipient.email %></td>
+            <td><%= recipient.updated_at.in_time_zone("Pacific Time (US & Canada)").strftime('%v') %></td>
+            <td><%= link_to 'Edit', edit_recipient_path(recipient) %></td>
+            <td><%= link_to 'Destroy', recipient_path(recipient), :method => :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require rails_bootstrap_forms
+ */
+@import "bootstrap";
+
+body {
+  background-color: #927546;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #262320;
+}
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: sandybrown;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th {
+  background-color: #C89D58;
+}
+
+.table-striped>tbody>tr:hover>td,
+.table-striped>tbody>tr:hover>th {
+  background-color: royalblue;
+}
+
+.navbar-btn {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+}
+.navbar-btn:hover {
+  color: #FFFFFF;
+  background-color: royalblue;
+  border-color: #2E6DA4
+}
+.btn-primary {
+  background-color: #E6BF7F;
+  color: #262320;
+}
+.btn-danger {
+  background-color: #C89D58;
+  color: #262320;
+}
+.btn-success {
+  background-color: #6E490D;
+  color: #262320;
+}
+.btn-warning {
+  background-color: #8C621F;
+  color: #262320;
+}
+.btn-info{
+  background-color: #AA7F39;
+  color: #262320;
+}
+
+.text-warning {
+  color: lightsalmon;
+}

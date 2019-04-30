@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @subject do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :activity %>
+  <%= f.submit 'Enter', :class => "btn btn-success" %>
+  <%= f.submit 'Exit', :class => "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tokens</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+
+    <h2>Tokens <%= image_tag("token.png", width: 128, height: 128, :alt => "token") %></h2>
+    <div class="row">
+      <div class="col-sm-12">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="nav navbar-nav navbar-left">
+              <a class="btn btn-primary navbar-btn" href="/tokens/select">New Token</a>
+              <a class="btn btn-danger navbar-btn" href="/tokens">Current Tokens </a>
+              <% if @user == 'Des Albert' %>
+                <a class="btn btn-success navbar-btn" href="/recipients">Manage Recipients </a>
+                <a class="btn btn-warning navbar-btn" href="/subjects">Manage Subjects </a>
+              <% end %>
+              <% if @user %>
+                <a class="btn btn-info navbar-btn" href="/login">Current User : <%= @user %> </a>
+              <% end %>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+      <div>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
+
